@@ -2,7 +2,7 @@
 
 ## About
 
-This is the official repository for the research paper *"Can Behavioral Features Reveal Your Intent to Lie While Answering an Online Personality Questionnaire? The Impact of Mouse Dynamics and Speech"*. The study investigates realistic approaches for detecting deceptive answers in online personality assessments, focusing on mouse dynamics and introducing speech-based features from verbal responses. Conducted in an in-the-wild setting with 64 participants, the dataset includes 3840 responses labeled as lying or honest. Findings show that speech features may enhance detection where mouse-based methods fall short. This repository provides the dataset, feature extractions, and analysis scripts.
+This is the official repository for the research paper *"Can Behavioral Features Reveal Your Intent to Lie While Answering an Online Personality Questionnaire? The Impact of Mouse Dynamics and Speech"*. The study investigates approaches for detecting deceptive answers in online personality assessments in real-world conditions, focusing on mouse dynamics and introducing speech-based features from verbal responses. Collected in an experiment conducted in an in-the-wild setting with 64 participants, the dataset includes 3840 responses labeled as lying or honest. Our findings indicate that speech features may enhance detection where mouse-based methods fall short, although a prediction model that leverages purely speech-based features was constrained in its prediction performance. This repository provides the dataset, screenshots documenting the design of the experiment, and scripts related to data analysis, feature extraction and construction of machine learning models.
 
 ### Table of contents
 
@@ -21,7 +21,7 @@ TODO
 
 ### **0 - [Raw Data](./analysis/data/0_Raw_Data/)**
 
-Part of raw data, mainly statistics and tabular exports. For access to the recording, please contact the authors.
+Part of raw data (metadata and demographic data) in tabular exports. For access to recordings, please contact the authors.
 
 ### **1 - [Processed Big 5 Data](./analysis/data/1_SurveyJS_Big5_Data_Processing/)**
 
@@ -29,7 +29,7 @@ Evaluation of the Big 5 questionnaire and calculation of results based on the [B
 
 ### **2 - [Raw Mouse Data](./analysis/data/2_UXtweak_Mouse_Data_Downloading/)**
 
-Interaction data, both raw and summarized, were downloaded from the UXtweak web service.
+Interaction data, both raw and summarized, that were downloaded from the usability testing tool [UXtweak](https://www.uxtweak.com/).
 
 ### **3 - [Processed Mouse Data](./analysis/data/3_UXtweak_Mouse_Data_Processing/)**
 
@@ -37,7 +37,7 @@ Summarized interaction data enriched with precise time (and other) characteristi
 
 ### **4 - [Paired Data](./analysis/data/4_Pair_UXtweak_and_SurveyJS/)**
 
-Matched data from Big 5 with UX Tweak, prepared for further processing.
+Matched data from Big 5 and UXtweak, prepared for further processing.
 
 ## Designs
 [Screenshots of the questionnaire](./designs) that our respondents were filling out.
@@ -48,7 +48,7 @@ Matched data from Big 5 with UX Tweak, prepared for further processing.
     <td align="center"><img src="./designs/imds-lies2_screen_2.png">Question</td>
   </tr>
   <tr>
-    <td align="center"><img src="./designs/imds-lies2_screen_3.png">No answer</td>
+    <td align="center"><img src="./designs/imds-lies2_screen_3.png">Unanswered Likert scale</td>
     <td align="center"><img src="./designs/imds-lies2_screen_4.png">Video instructions for first verbal elaboration </td>
   </tr>
   <tr>
@@ -61,23 +61,23 @@ Matched data from Big 5 with UX Tweak, prepared for further processing.
   </tr>
   <tr>
     <td align="center"><img src="./designs/imds-lies2_screen_9.png">Ground truth matrix</td>
-    <td align="center"><img src="./designs/imds-lies2_screen_10.png">End of questionnaire</td>
+    <td align="center"><img src="./designs/imds-lies2_screen_10.png">End of the questionnaire</td>
   </tr>
 </table>
 
 Video instructions for Honest version:
-[H1](https://www.youtube.com/embed/0i9Sy7pZWcg?),
-[H2](https://www.youtube.com/embed/B3fmEYIlziY?),
-[H3](https://www.youtube.com/embed/ZBoX1kwQOgs?)
+[General instructions](https://www.youtube.com/embed/0i9Sy7pZWcg?),
+[Elaboration segment instructions](https://www.youtube.com/embed/B3fmEYIlziY?),
+[Truth check segment instructions](https://www.youtube.com/embed/ZBoX1kwQOgs?)
 
 Video instructions for Faking Good version:
-[FG1](https://www.youtube.com/embed/cSij45rBZrQ?),
-[FG2](https://www.youtube.com/embed/R5EyO_h85W4?),
-[FG3](https://www.youtube.com/embed/ke2ExCyqAfs?)
+[General instructions](https://www.youtube.com/embed/cSij45rBZrQ?),
+[Elaboration segment instructions](https://www.youtube.com/embed/R5EyO_h85W4?),
+[Truth check segment instructions](https://www.youtube.com/embed/ke2ExCyqAfs?)
 
 ## Scripts
 
-All of the scripts are written using Python (version 3.10.7) and other external libraries installed using pip (version 24.0). Scripts were executed using jupyter notebooks. A [requirements file](./analysis/requirements.txt) is provided for installing dependencies. After installing Python, the below commands can be used in the analysis directory to install the environment and launch the notebooks:
+All of the scripts are written in Python (version 3.10.7) and with other external libraries installed using pip (version 24.0). Scripts are executed using jupyter notebooks. A [requirements file](./analysis/requirements.txt) is provided for installing dependencies. After installing Python, the below commands can be used in the analysis directory to install the environment and launch the notebooks:
 ```
 python -m venv .venv
 .venv\Scripts\activate
@@ -98,7 +98,7 @@ Contains an analysis of data collected from the Big 5 questionnaire and a visual
 
 ### **2 - [Mouse Data Downloading](./analysis/scripts/2_UXtweak_Mouse_Data_Downloading.ipynb)**
 
-Used to download interaction data, both raw and summarized, from the UXtweak web service and save it locally.
+Used to download interaction data, both raw and summarized, from the website usability testing tool [UXtweak](https://www.uxtweak.com/website-usability-testing-tool) and save it locally.
 
 ### **3 - [Mouse Data Processing](./analysis/scripts/3_UXtweak_Mouse_Data_Processing.ipynb)**
 
@@ -144,7 +144,7 @@ Prepares data and trains models based on acoustic, linguistic, and contextual ma
 
 ### **13 - [Mouse Data Preparation](./analysis/scripts/13_Mouse_Data_Preparation.ipynb)**
 
-Used to obtain metrics of mouse movement trajectories and process trajectory coordinates into a format suitable for a neural network.
+Used to obtain metrics of mouse movement trajectories, and process trajectory coordinates into a format suitable for a neural network.
 
 ### **14 - [Mouse Model](./analysis/scripts/14_Mouse_Model.ipynb)**
 
@@ -152,11 +152,11 @@ Prepares data and trains models based on features of participants' mouse movemen
 
 ### **15 - [Neural Net Model](./analysis/scripts/15_Neural_Net_Model.ipynb)**
 
-Processes data for neural network training, including the neural network architecture and training loop. The trained neural network is saved for further evaluation and use.
+Processes data for the training of a neural network, including the neural network architecture and training loop. The trained neural network is saved for further evaluation and use.
 
 ### **16 - [Evaluation](./analysis/scripts/16_Evaluation.ipynb)**
 
-Compares all three approaches. Results from each approach are loaded, the best model is selected, loaded, and evaluated. Graphs from this notebook are used in the thesis text.
+Compares all approaches. Results from each approach are loaded, the best model is selected, loaded, and evaluated. Graphs from this notebook are used in the thesis text.
 
 ### **17 - [Graphs and Charts](./analysis/scripts/17_Graphs_and_Charts.ipynb)**
 
@@ -184,7 +184,8 @@ He received his master’s degree in computer science from the [Faculty of Infor
 - Email: petersmrecek([AT])gmail.sk
 
 **Stefan Benus**\
-TODO
+He is an Assistant Professor at [Constantine the Philosopher University in Nitra, Slovakia](https://www.ukf.sk/en/university). He completed his PhD at New York University and has previously worked at Columbia University and Brown University, USA. Research interests: the relationship between phonetics and phonology with a special interest in the articulatory characteristics of speech; the relationship between speech prosody and pragmatic/discourse aspect of the message as well as the emotional state of the speaker delivering the message; possibilities of applying the knowledge of these relationships in speech applications (synthesis, recognition, dialog systems) and in language acquisition.
+- Email: sbenus([AT])ukf.sk
 
 ## License
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
