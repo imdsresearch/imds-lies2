@@ -1,4 +1,4 @@
-# imds-lies2
+# Can Behavioral Features Reveal Your Intent to Lie While Answering an Online Personality Questionnaire? The Impact of Mouse Dynamics and Speech
 
 ## About
 
@@ -136,7 +136,7 @@ Identifies issues with transcripts by comparing the outputs of the Whisper model
 
 ### **11 - [Pause Defined Units](./analysis/scripts/11_Pause_Defined_Units.ipynb)**
 
-Divides recordings into units defined by pauses. These units are then used to obtain acoustic, linguistic, and contextual machine learning features. The code for obtaining acoustic metrics is sourced from [PraatScripts on GitHub](https://github.com/drfeinberg/PraatScripts/tree/master)
+Divides recordings into units defined by pauses. These units are then used in feature extraction to obtain acoustic, speech-temporal, syntactic, and semantic machine learning features. The code for obtaining acoustic metrics is sourced from [PraatScripts on GitHub](https://github.com/drfeinberg/PraatScripts/tree/master)
 
 ### **12 - [PDU Aggregations and Models](./analysis/scripts/12_PDU_Aggregations_and_Models.ipynb)**
 
