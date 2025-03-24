@@ -1,4 +1,4 @@
-# Can Behavioral Features Reveal Your Intent to Lie While Answering an Online Personality Questionnaire? The Impact of Mouse Dynamics and Speech
+# Can Behavioral Features Reveal Lying in an Online Personality Questionnaire? The Impact of Mouse Dynamics and Speech
 
 ## About
 
